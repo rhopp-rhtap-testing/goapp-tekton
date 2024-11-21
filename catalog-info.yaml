@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: goapp-tekton 
+  description: Secure Supply Chain Example for User Provided Repo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=goapp-tekton
+    backstage.io/kubernetes-id: goapp-tekton 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: goapp-tekton
+    quay.io/repository-slug: rhtap/goapp-tekton
+  tags: ["experimental", "sscs", "sbom", "acs"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
